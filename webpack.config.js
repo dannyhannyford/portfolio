@@ -14,14 +14,14 @@ module.exports = {
       {
         test: /\.jsx?$/,
         use: 'babel-loader',
-      }
+      }, {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   mode: 'production',
   resolve: {
-    fallback: {
-      
-    },
     extensions: ['.js', '.jsx', '.css'],
   },
   watch: false,
