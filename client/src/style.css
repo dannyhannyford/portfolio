@@ -1,0 +1,19 @@
+html, body, #app {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.home {
+  background-color: salmon;
+  /* background-image: url('https://portfoliodan.s3-us-west-2.amazonaws.com/beach.jpg'); */
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}

@@ -22,7 +22,7 @@ module.exports = {
   },
   mode: 'production',
   resolve: {
-    extensions: ['.js', '.jsx', '.css'],
+    extensions: ['.js', '.jsx', '.css', '.jpg'],
   },
   watch: false,
   watchOptions: {

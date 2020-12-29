@@ -1,11 +1,10 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+// import { Container } from '@material-ui/core';
+import '../style.css';
 
 const About = () => {
   return (
-    <Container maxWidth="sm">
       <div>About me</div>
-    </Container>
   )
 }
 
