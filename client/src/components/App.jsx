@@ -1,8 +1,11 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 const App = () => {
   return (
-    <div>hi</div>
+    <Button variant="contained" color="primary">
+    Material UI online!
+  </Button>
   );
 };
 
