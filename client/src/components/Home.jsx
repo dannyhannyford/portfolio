@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="home">
       <Container maxWidth="md">
-          <div className="homebox">
+          <div className="homebox pad">
             <div className="homecover">
               <div className="hometxt">
                 <h1>danny</h1>
