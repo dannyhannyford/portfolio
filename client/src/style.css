@@ -47,7 +47,17 @@ h3 {
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  border-color: #faaa8f;
-  background-color: #faaa8f;
+  border-color:#faaa8f;
+  background-color:#faaa8f;
   border-width: 10px;
 }
+
+.about {
+  height: 50vh;
+  width: 100vw;
+}
+
+/*
+#fff5ee 
+#faaa8f
+ */
