@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
+import IconLabelButtons from './IconLabelButtons';
 import '../style.css';
 
 // TODO how to keep my box within the background
@@ -16,7 +17,8 @@ const Home = () => {
                 <h3>Looking for a team that will push me towards new horizons.</h3>
               </div>
             </div>
-          </div>    
+          </div>
+          <IconLabelButtons /> 
       </Container>
     </div>
   );
