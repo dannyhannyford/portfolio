@@ -1,0 +1,50 @@
+html, body, #app {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 72px;
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+h3 {
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+.home {
+  background-image: url(https://portfoliodan.s3-us-west-2.amazonaws.com/oceanBeach.jpg);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.homebox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30%;
+}
+
+.hometxt {
+  margin: 10px;
+  color: #444444;
+  text-align: center;
+}
+
+.homecover {
+  border-style: solid;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-color: #faaa8f;
+  background-color: #faaa8f;
+  border-width: 10px;
+}

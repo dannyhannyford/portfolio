@@ -1,11 +1,17 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import Home from './Home';
+import About from './About';
+import Header from './Header';
+import '../style.css';
 
 const App = () => {
   return (
-    <Button variant="contained" color="primary">
-    Material UI online!
-  </Button>
+    <div>
+      <Home />
+      <Header />
+      <About />
+    </div>
+    
   );
 };
 
