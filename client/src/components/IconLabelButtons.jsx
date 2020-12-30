@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 const theme = createMuiTheme({
   palette: {
     secondary: {
-      main: '#24292e'
+      main: '#444444'
     },
   },
 });
@@ -23,8 +23,11 @@ const theme = createMuiTheme({
 const IconLabelButtons = () => {
   const classes = useStyles();
   return (
-    <div>
+    <div className="homebox">
       <Button
+        href="https://www.linkedin.com/in/dannyhanford"
+        target="_blank"
+        rel="noopener noreferrer"
         variant="contained"
         color="primary"
         className={classes.button}
@@ -34,6 +37,9 @@ const IconLabelButtons = () => {
       </Button>
       <ThemeProvider theme={theme}>
         <Button
+          href="https://github.com/dannyhannyford"
+          target="_blank"
+          rel="noopener noreferrer"
           variant="contained"
           color="secondary"
           className={classes.button}
