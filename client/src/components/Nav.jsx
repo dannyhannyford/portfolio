@@ -9,6 +9,8 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import IconButton from '@material-ui/core/IconButton';
 import { Grid } from '@material-ui/core';
+import { MemoryRouter as Router } from 'react-router';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 function HideOnScroll(props) {
@@ -55,16 +57,23 @@ const Nav = (props) => {
                 justify="space-evenly"
                 alignItems="center"
                 >
-                  <Button 
-                  color="inherit"
+                <Router>
+                  <Button
+                    component={Link}
+                    smooth to="#home"
+                    color="inherit"
                   >
                     Home
                   </Button>
-                  <Button 
+                
+                  <Button
+                  component={Link}
+                  smooth to="#about"
                   color="inherit"
                   >
                     About
                   </Button>
+                </Router>
                   <Button 
                   color="inherit"
                   >

@@ -7,7 +7,7 @@ import '../style.css';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div id="home" className="home">
       <Container maxWidth="md">
           <div className="homebox pad">
             <div className="homecover">
