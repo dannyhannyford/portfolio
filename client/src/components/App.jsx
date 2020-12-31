@@ -7,8 +7,8 @@ import '../style.css';
 const App = () => {
   return (
     <div>
-      <Home />
       <Nav />
+      <Home />
       <About />
     </div>
     
