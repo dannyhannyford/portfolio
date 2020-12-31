@@ -8,6 +8,7 @@ import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import IconButton from '@material-ui/core/IconButton';
+import { Grid } from '@material-ui/core';
 
 
 function HideOnScroll(props) {
@@ -48,26 +49,33 @@ const Nav = (props) => {
               <Typography variant="h6">
                 dannyhanny
               </Typography>
-                <Button 
-                color="inherit"
+              <Grid
+                container
+                direction="row"
+                justify="space-evenly"
+                alignItems="center"
                 >
-                  Home
-                </Button>
-                <Button 
-                color="inherit"
-                >
-                  About
-                </Button>
-                <Button 
-                color="inherit"
-                >
-                  Portfolio
-                </Button>
-                <Button 
-                color="inherit"
-                >
-                  Contact
-                </Button>
+                  <Button 
+                  color="inherit"
+                  >
+                    Home
+                  </Button>
+                  <Button 
+                  color="inherit"
+                  >
+                    About
+                  </Button>
+                  <Button 
+                  color="inherit"
+                  >
+                    Portfolio
+                  </Button>
+                  <Button 
+                  color="inherit"
+                  >
+                    Contact
+                  </Button>
+                </Grid>
             </Toolbar>
           </AppBar>
         </HideOnScroll>
