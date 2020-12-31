@@ -6,10 +6,11 @@ import '../style.css';
 
 const App = () => {
   return (
+    
     <div>
       <Nav />
       <Home />
-      <About />
+      <About /> 
     </div>
     
   );
