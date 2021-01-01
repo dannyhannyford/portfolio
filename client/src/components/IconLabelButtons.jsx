@@ -32,16 +32,16 @@ const IconLabelButtons = () => {
   return (
     <div className="homebox">
       <ThemeProvider theme={theme}>
-        <Button
-          href="https://portfoliodan.s3-us-west-2.amazonaws.com/DannyHanford.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="contained"
-          style={theme.palette.accent}
-          className={classes.button}
-          startIcon={<GetAppIcon />}
-          >
-            Resume
+          <Button
+            href="https://portfoliodan.s3-us-west-2.amazonaws.com/DannyHanford.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="contained"
+            style={theme.palette.accent}
+            className={classes.button}
+            startIcon={<GetAppIcon />}
+            >
+              Resume
           </Button>
           <Button
             href="https://www.linkedin.com/in/dannyhanford"
