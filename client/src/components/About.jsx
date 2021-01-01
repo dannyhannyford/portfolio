@@ -21,8 +21,8 @@ const PinkTypography = withStyles({
 const About = () => {
   const classes = useStyles();
   return (
-    <div className="about">
-      <Container id="about" maxWidth="md">
+    <div id="about" className="about">
+      <Container maxWidth="md">
         <div className={classes.root}>
             <Grid
               justify="center"

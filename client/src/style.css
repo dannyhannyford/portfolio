@@ -53,11 +53,18 @@ h3 {
 .about {
   margin-top: 5%;
 }
+
 #about {
   height: 50vh;
-  width: 100vw;
 }
 
+#portfolio {
+  height: 50vh;
+}
+
+#contact {
+  height: 50vh;
+}
 /*
 #fff5ee 
 #faaa8f

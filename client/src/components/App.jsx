@@ -2,6 +2,8 @@ import React from 'react';
 import Home from './Home';
 import About from './About';
 import Nav from './Nav';
+import Portfolio from './Portfolio';
+import Contact from './Contact';
 import '../style.css';
 
 const App = () => {
@@ -10,7 +12,9 @@ const App = () => {
     <div>
       <Nav />
       <Home />
-      <About /> 
+      <About />
+      <Portfolio />
+      <Contact />
     </div>
     
   );
