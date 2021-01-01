@@ -73,18 +73,22 @@ const Nav = (props) => {
                   >
                     About
                   </Button>
-                </Router>
-                  <Button 
+                  <Button
+                  component={Link}
+                  smooth to="#portfolio"
                   color="inherit"
                   >
                     Portfolio
                   </Button>
-                  <Button 
+                  <Button
+                  component={Link}
+                  smooth to="#contact"
                   color="inherit"
                   >
                     Contact
                   </Button>
-                </Grid>
+                </Router>
+              </Grid>
             </Toolbar>
           </AppBar>
         </HideOnScroll>
