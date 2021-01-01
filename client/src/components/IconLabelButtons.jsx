@@ -3,8 +3,7 @@ import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/sty
 import Button from '@material-ui/core/Button';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
-
-
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -14,9 +13,17 @@ const useStyles = makeStyles((theme) => ({
 
 const theme = createMuiTheme({
   palette: {
+    primary: {
+      main: '#0097ac'
+    },
     secondary: {
       main: '#444444'
     },
+    accent: {
+      backgroundColor: '#f4dcb5',
+      color:'#444444',
+
+    }
   },
 });
 
@@ -24,31 +31,41 @@ const IconLabelButtons = () => {
   const classes = useStyles();
   return (
     <div className="homebox">
-      <Button
-        href="https://www.linkedin.com/in/dannyhanford"
-        target="_blank"
-        rel="noopener noreferrer"
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        startIcon={<LinkedInIcon />}
-      >
-        LinkedIn
-      </Button>
       <ThemeProvider theme={theme}>
         <Button
-          href="https://github.com/dannyhannyford"
+          href="https://portfoliodan.s3-us-west-2.amazonaws.com/DannyHanford.pdf"
           target="_blank"
           rel="noopener noreferrer"
           variant="contained"
-          color="secondary"
+          style={theme.palette.accent}
           className={classes.button}
-          startIcon={<GitHubIcon />}
-        >
-          GitHub
-        </Button>
+          startIcon={<GetAppIcon />}
+          >
+            Resume
+          </Button>
+          <Button
+            href="https://www.linkedin.com/in/dannyhanford"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            startIcon={<LinkedInIcon />}
+          >
+            LinkedIn
+          </Button>
+          <Button
+            href="https://github.com/dannyhannyford"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="contained"
+            color="secondary"
+            className={classes.button}
+            startIcon={<GitHubIcon />}
+          >
+            GitHub
+          </Button>
       </ThemeProvider>
-      
     </div>
   );
 };

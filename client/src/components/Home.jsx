@@ -3,7 +3,6 @@ import { Container } from '@material-ui/core';
 import IconLabelButtons from './IconLabelButtons';
 import Box from '@material-ui/core/Box';
 import '../style.css';
-
 // TODO how to keep my box within the background
 
 const Home = () => {
@@ -19,7 +18,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <IconLabelButtons /> 
+            <IconLabelButtons />
         </Container>
       </div>
     </Box>
