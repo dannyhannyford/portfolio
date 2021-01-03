@@ -18,10 +18,12 @@ h3 {
 }
 .home {
   background-image: url(https://portfoliodan.s3-us-west-2.amazonaws.com/oceanBeach.jpg);
-  height: 100vh;
+  max-height: 100vh;
+  min-height: 80vh;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
+  padding-bottom: 5%;
 }
 
 .homebox {
@@ -52,20 +54,22 @@ h3 {
 }
 .about {
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 #about {
-  height: 50vh;
+  
 }
 
 #portfolio {
   background-color: #fff5ee;
-  height: 50vh;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 #contact {
+  margin-top: 5%;
   background-color:#444444;
-  height: 50vh;
 }
 
 #form {

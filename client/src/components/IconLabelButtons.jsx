@@ -22,7 +22,11 @@ const theme = createMuiTheme({
     accent: {
       backgroundColor: '#f4dcb5',
       color:'#444444',
-
+    },
+    send: {
+      backgroundColor: '#444444',
+      color: '#FFFFFF',
+      borderColor: '#ffffff',
     }
   },
 });
@@ -71,3 +75,5 @@ const IconLabelButtons = () => {
 };
 
 export default IconLabelButtons;
+
+export { theme };
