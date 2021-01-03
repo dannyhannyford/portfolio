@@ -64,7 +64,12 @@ h3 {
 }
 
 #contact {
+  background-color:#444444;
   height: 50vh;
+}
+
+#form {
+  width: 100%;
 }
 /*
 #fff5ee 
