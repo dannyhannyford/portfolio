@@ -6,9 +6,9 @@ import Container from '@material-ui/core/Container';
 const Portfolio = () => {
   return (
     <div id="portfolio">
-      <Container maxWidth="md">
-        <Typography >
-          <Box fontWeight="fontWeightBold" textAlign="left">
+      <Container maxWidth="lg">
+        <Typography variant="h3" gutterBottom>
+          <Box fontWeight="fontWeightBold" textAlign="center">
             Portfolio
           </Box>
         </Typography>

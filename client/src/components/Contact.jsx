@@ -52,7 +52,7 @@ const Contact = () => {
           justify="center"
           alignItems="center"
           >
-            <Typography variant="h3">
+            <Typography variant="h3" gutterBottom>
               <Box fontWeight="fontWeightBold" color="white">
                 Contact
               </Box>
