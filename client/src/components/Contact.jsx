@@ -45,7 +45,7 @@ const Contact = () => {
 
   return (
     <div id="contact">
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <Grid
           container
           direction="column"
@@ -59,7 +59,7 @@ const Contact = () => {
             </Typography>
             <form id="form" className={classes.root}>
               <Grid item>
-              <FormControl fullWidth variant="outlined">
+              <FormControl size="medium" fullWidth variant="outlined">
                 <InputLabel htmlFor="Name">Name</InputLabel>
                 <OutlinedInput
                 fullWidth 
@@ -107,9 +107,9 @@ const Contact = () => {
                   Submit
                 </Button>
               </ThemeProvider>
-              </Grid>
-            </form>
-          </Grid>
+            </Grid>
+          </form>
+        </Grid>
       </Container>
     </div>
   );
