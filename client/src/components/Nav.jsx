@@ -68,7 +68,6 @@ const theme = createMuiTheme({
 });
 
 const Nav = (props) => {
-  
   return (
     <>
       <ThemeProvider theme={theme}>
