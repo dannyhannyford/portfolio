@@ -8,12 +8,13 @@ import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import IconButton from '@material-ui/core/IconButton';
-import { Grid } from '@material-ui/core';
+import { Grid, Box } from '@material-ui/core';
 import { MemoryRouter as Router } from 'react-router';
 import { HashLink as Link } from 'react-router-hash-link';
 import Zoom from '@material-ui/core/Zoom';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Fab from '@material-ui/core/Fab';
+import { theme as theme2 } from './IconLabelButtons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,7 +63,10 @@ const ScrollTop = (props) => {
 const theme = createMuiTheme({
   palette: {
     secondary: {
-      main: '#faaa8f'
+      main: '#faaa8f',
+    },
+    title: {
+      color: '#444444',
     },
   },
 });
@@ -76,14 +80,18 @@ const Nav = (props) => {
           color="secondary"
           >
             <Toolbar>
+              <ThemeProvider theme={theme2}>
               <IconButton
               edge="start"
-              color="inherit"
+              color="secondary"
               >  
                 <BrightnessHighIcon />
               </IconButton>
+              </ThemeProvider>
               <Typography variant="h6">
-                dannyhanny
+                <Box color={theme.palette.title.color}>
+                  dannyhanny
+                </Box>
               </Typography>
               <Grid
                 container
@@ -95,29 +103,29 @@ const Nav = (props) => {
                   <Button
                     component={Link}
                     smooth to="#home"
-                    color="inherit"
+                    color="secondary"
                   >
                     Home
                   </Button>
                 
                   <Button
                   component={Link}
+                  color="secondary"
                   smooth to="#about"
-                  color="inherit"
                   >
                     About
                   </Button>
                   <Button
                   component={Link}
+                  color="secondary"
                   smooth to="#portfolio"
-                  color="inherit"
                   >
                     Portfolio
                   </Button>
                   <Button
                   component={Link}
+                  color="secondary"
                   smooth to="#contact"
-                  color="inherit"
                   >
                     Contact
                   </Button>

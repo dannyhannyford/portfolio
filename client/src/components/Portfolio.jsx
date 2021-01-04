@@ -6,6 +6,7 @@ import applications from './Utils';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import { theme } from './IconLabelButtons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +27,7 @@ const Portfolio = () => {
     <div id="portfolio" className={classes.root}>
       <Container maxWidth="lg">
         <Typography variant="h3" gutterBottom>
-          <Box fontWeight="fontWeightBold" textAlign="center">
+          <Box fontWeight="fontWeightBold" textAlign="center" color={theme.palette.secondary.main}>
             Portfolio
           </Box>
         </Typography>

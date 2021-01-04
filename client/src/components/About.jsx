@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import '../style.css';
+import { theme } from './IconLabelButtons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +41,7 @@ const About = () => {
                   </Box>
                 </PinkTypography>
                 <Typography variant="body1" gutterBottom>
-                  <Box textAlign="left">
+                  <Box textAlign="left" color={theme.palette.secondary.main}>
                     This past year I taught myself Python creating a Discord Bot plugin for my friends.
                     I picked up Javascript to attend and complete the Software Engineering bootcamp Hack Reactor. 
                     I'm currently working on an application to track and teach dance moves with Tensorflow.js called Tensor Tango.
