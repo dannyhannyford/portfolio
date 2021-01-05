@@ -12,6 +12,7 @@ import {
   OutlinedInput
 } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -41,6 +42,24 @@ const Contact = () => {
     if (e.target.id === 'Message') {
       setMessage(e.target.value)
     }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('/email', {
+      name,
+      email,
+      message,
+    })
+      .then(({ data }) => {
+        console.log('front-data', data)
+        setName('');
+        setEmail('');
+        setMessage('');
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
   return (
@@ -99,6 +118,7 @@ const Contact = () => {
               >
               <ThemeProvider theme={theme}> 
                 <Button
+                  onClick={(e) => handleSubmit(e)}
                   variant="outlined"
                   className={classes.button}
                   style={theme.palette.send}
