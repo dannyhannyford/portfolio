@@ -20,7 +20,7 @@ app.post('/email', (req, res) => {
       console.log('Email sent: ' + info.response);
     }
   });
-  res.send(250);
+  res.sendStatus(250);
 });
 
 module.exports = app;
