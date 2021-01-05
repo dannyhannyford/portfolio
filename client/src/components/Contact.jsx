@@ -4,15 +4,15 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
-import { theme } from './IconLabelButtons';
+import axios from 'axios';
 import {
   FormControl,
   Grid,
   InputLabel,
-  OutlinedInput
+  OutlinedInput,
 } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import axios from 'axios';
+import { theme } from './IconLabelButtons';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
 
 const Contact = () => {
   const classes = useStyles();
@@ -40,9 +39,9 @@ const Contact = () => {
       setEmail(e.target.value);
     }
     if (e.target.id === 'Message') {
-      setMessage(e.target.value)
+      setMessage(e.target.value);
     }
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,8 +57,8 @@ const Contact = () => {
       })
       .catch((err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 
   return (
     <div id="contact">
@@ -69,59 +68,63 @@ const Contact = () => {
           direction="column"
           justify="center"
           alignItems="center"
-          >
-            <Typography variant="h3" gutterBottom>
-              <Box fontWeight="fontWeightBold" color="white">
-                Contact
-              </Box>
-            </Typography>
-            <form id="form" className={classes.root}>
-              <Grid item>
+        >
+          <Typography variant="h3" gutterBottom>
+            <Box fontWeight="fontWeightBold" color="white">
+              Contact
+            </Box>
+          </Typography>
+          <form id="form" className={classes.root}>
+            <Grid item>
               <FormControl size="medium" fullWidth variant="outlined">
                 <InputLabel htmlFor="Name">Name</InputLabel>
                 <OutlinedInput
-                fullWidth 
-                id="Name"
-                value={name}
-                onChange={handleChange}
-                label="Name" />
+                  fullWidth
+                  id="Name"
+                  value={name}
+                  onChange={handleChange}
+                  label="Name"
+                />
               </FormControl>
-              </Grid>
-              <Grid item>
+            </Grid>
+            <Grid item>
               <FormControl fullWidth variant="outlined">
                 <InputLabel htmlFor="Email">Email</InputLabel>
                 <OutlinedInput
-                fullWidth 
-                id="Email"
-                value={email}
-                onChange={handleChange}
-                label="Email" />
+                  fullWidth
+                  id="Email"
+                  value={email}
+                  onChange={handleChange}
+                  label="Email"
+                />
               </FormControl>
-              </Grid>
-              <Grid item>
+            </Grid>
+            <Grid item>
               <FormControl fullWidth variant="outlined">
                 <InputLabel htmlFor="Message">Message</InputLabel>
                 <OutlinedInput
-                fullWidth 
-                id="Message"
-                multiline
-                rows={6}
-                value={message}
-                onChange={handleChange}
-                label="Message" />
+                  fullWidth
+                  id="Message"
+                  multiline
+                  rows={6}
+                  value={message}
+                  onChange={handleChange}
+                  label="Message"
+                />
               </FormControl>
-              </Grid>
-              <Grid container
+            </Grid>
+            <Grid
+              container
               justify="flex-end"
               allignItems="center"
-              >
-              <ThemeProvider theme={theme}> 
+            >
+              <ThemeProvider theme={theme}>
                 <Button
                   onClick={(e) => handleSubmit(e)}
                   variant="outlined"
                   className={classes.button}
                   style={theme.palette.send}
-                  endIcon={<SendIcon/>}
+                  endIcon={<SendIcon />}
                 >
                   Submit
                 </Button>
