@@ -52,7 +52,6 @@ const Contact = () => {
       message,
     })
       .then(({ data }) => {
-        console.log('front-data', data)
         setName('');
         setEmail('');
         setMessage('');
