@@ -40,7 +40,7 @@ const ScrollTop = (props) => {
   const classes = useStyles();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold:100,
+    threshold: 100,
   });
 
   const handleClick = (event) => {
@@ -49,7 +49,7 @@ const ScrollTop = (props) => {
     if (anchor) {
       anchor.scrollIntoView({ behavior: 'smooth', block: 'center'});
     }
-  }
+  };
 
   return (
     <Zoom in={trigger}>
@@ -57,7 +57,7 @@ const ScrollTop = (props) => {
         {children}
       </div>
     </Zoom>
-  )
+  );
 };
 
 const theme = createMuiTheme({

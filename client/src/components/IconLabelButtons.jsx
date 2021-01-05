@@ -14,14 +14,14 @@ const useStyles = makeStyles((theme) => ({
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#0097ac'
+      main: '#0097ac',
     },
     secondary: {
-      main: '#444444'
+      main: '#444444',
     },
     accent: {
       backgroundColor: '#f4dcb5',
-      color:'#444444',
+      color: '#444444',
     },
     send: {
       backgroundColor: '#444444',
@@ -36,39 +36,39 @@ const IconLabelButtons = () => {
   return (
     <div className="homebox">
       <ThemeProvider theme={theme}>
-          <Button
-            href="https://portfoliodan.s3-us-west-2.amazonaws.com/DannyHanford.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="contained"
-            style={theme.palette.accent}
-            className={classes.button}
-            startIcon={<GetAppIcon />}
-            >
-              Resume
-          </Button>
-          <Button
-            href="https://www.linkedin.com/in/dannyhanford"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            startIcon={<LinkedInIcon />}
-          >
-            LinkedIn
-          </Button>
-          <Button
-            href="https://github.com/dannyhannyford"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="contained"
-            color="secondary"
-            className={classes.button}
-            startIcon={<GitHubIcon />}
-          >
-            GitHub
-          </Button>
+        <Button
+          href="https://portfoliodan.s3-us-west-2.amazonaws.com/DannyHanford.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="contained"
+          style={theme.palette.accent}
+          className={classes.button}
+          startIcon={<GetAppIcon />}
+        >
+          Resume
+        </Button>
+        <Button
+          href="https://www.linkedin.com/in/dannyhanford"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          startIcon={<LinkedInIcon />}
+        >
+          LinkedIn
+        </Button>
+        <Button
+          href="https://github.com/dannyhannyford"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="contained"
+          color="secondary"
+          className={classes.button}
+          startIcon={<GitHubIcon />}
+        >
+          GitHub
+        </Button>
       </ThemeProvider>
     </div>
   );

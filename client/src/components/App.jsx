@@ -6,18 +6,14 @@ import Portfolio from './Portfolio';
 import Contact from './Contact';
 import '../style.css';
 
-const App = () => {
-  return (
-    
-    <div>
-      <Nav />
-      <Home />
-      <About />
-      <Portfolio />
-      <Contact />
-    </div>
-    
-  );
-};
+const App = () => (
+  <div>
+    <Nav />
+    <Home />
+    <About />
+    <Portfolio />
+    <Contact />
+  </div>
+);
 
 export default App;
