@@ -2,23 +2,39 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
-import applications from './Utils';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import { theme } from './IconLabelButtons';
-
+import applications from './Utils';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+  },
+  media: {
+    height: 140,
   },
   paper: {
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  actionArea: {
+    '&:hover $focusHighlight': {
+      opacity: 0.5,
+      color: '#0097ac',
+      borderRadius: '4px',
+    },
+  },
+  focusHighlight: {},
 }));
+
+const newTab = (link) => {
+  window.open(link, '_blank');
+};
 
 const Portfolio = () => {
   const classes = useStyles();
@@ -34,18 +50,37 @@ const Portfolio = () => {
         <Grid container justify="center" spacing={1}>
           {applications.map((app) => (
             <Grid key={app.title} item xs={3}>
-              <Paper className={classes.paper}>
-                <Box variant="h3" fontWeight="fontWeightBold" textAlign="center">
-                  {app.title}
-                </Box>
-                <Box variant="body1" textAlign="center">
-                  {app.description}
-                </Box>
-              </Paper>
+              <CardActionArea
+                classes={{
+                  root: classes.actionArea,
+                  focusHighlight: classes.focusHighlight,
+                }}
+                onClick={() => newTab(app.link)}
+              >
+                <Paper
+                  className={classes.paper}
+                >
+                  <Typography gutterBottom>
+                    <Box variant="h3" fontWeight="fontWeightBold" textAlign="center" color={theme.palette.secondary.main}>
+                      {app.title}
+                    </Box>
+                  </Typography>
+                  <CardMedia
+                    component="img"
+                    className={classes.media}
+                    image={app.pic}
+                    title={app.title}
+                  />
+                  <Typography>
+                    <Box variant="body1" textAlign="center" color={theme.palette.secondary.main}>
+                      {app.description}
+                    </Box>
+                  </Typography>
+                </Paper>
+              </CardActionArea>
             </Grid>
           ))}
         </Grid>
-        {/* put project link pic */}
       </Container>
     </div>
   );
