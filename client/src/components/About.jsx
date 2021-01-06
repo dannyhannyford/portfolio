@@ -36,7 +36,7 @@ const About = () => {
             </Grid>
             <Grid item sm={7}>
               <PinkTypography variant="h3" gutterBottom>
-                <Box fontWeight="fontWeightBold" textAlign="center">
+                <Box fontWeight="fontWeightBold" textAlign="left">
                   About
                 </Box>
               </PinkTypography>
