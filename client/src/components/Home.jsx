@@ -1,28 +1,42 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
-import IconLabelButtons from './IconLabelButtons';
 import '../style.css';
-// TODO how to keep my box within the background
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import IconLabelButtons from './IconLabelButtons';
 
-const Home = () => {
-  return (
-    <Box height="100%">
-      <div id="home" className="home">
-        <Container maxWidth="md">
-            <div className="homebox pad">
-              <div className="homecover">
-                <div className="hometxt">
-                  <h1>danny</h1>
-                  <h3>Full-Stack Software Engineer. I work with beeps and boops.</h3>
-                </div>
-              </div>
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Pacifico',
+      'cursive',
+    ].join(','),
+  },
+});
+
+const Home = () => (
+  <Box height="100%">
+    <div id="home" className="home">
+      <Container maxWidth="md">
+        <div className="homebox pad">
+          <div className="homecover">
+            <div className="hometxt">
+              <ThemeProvider theme={theme}>
+                <Typography gutterBottom>
+                  <Box>
+                    <h1>Danny</h1>
+                  </Box>
+                </Typography>
+              </ThemeProvider>
+              <h3>Full-Stack Software Engineer. I work with beeps and boops.</h3>
             </div>
-            <IconLabelButtons />
-        </Container>
-      </div>
-    </Box>
-  );
-};
+          </div>
+        </div>
+        <IconLabelButtons />
+      </Container>
+    </div>
+  </Box>
+);
 
 export default Home;
