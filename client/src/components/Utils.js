@@ -19,7 +19,7 @@ applications.push({
   title: 'Paste-E-Bot',
   description: 'Discord bot for playing music and other server commands',
   link: 'https://github.com/dannyhannyford/Paste-E.-Bot-1.0',
-  pic: 'https://portfoliodan.s3-us-west-2.amazonaws.com/discord.jpg',
+  pic: 'https://portfoliodan.s3-us-west-2.amazonaws.com/discord.webp',
 });
 
 export default applications;
