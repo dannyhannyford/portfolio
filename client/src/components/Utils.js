@@ -7,7 +7,7 @@ applications.push({
   pic: 'https://portfoliodan.s3-us-west-2.amazonaws.com/image34.png',
 }, {
   title: 'Tensor Tango',
-  description: 'Tensorflow.js application using a camera to track and label dance moves',
+  description: 'Tensorflow.js application utilizing computer vision to track and label dance moves',
   link: 'https://github.com/dannyhannyford/tensorTango',
   pic: 'https://portfoliodan.s3-us-west-2.amazonaws.com/tango.png',
 }, {
