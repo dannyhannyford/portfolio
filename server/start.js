@@ -11,6 +11,7 @@ app.use(express.static(PUBLIC_DIR));
 
 app.post('/email', (req, res) => {
   mailOptions.from = req.body.email;
+  mailOptions.replyTo = req.body.email;
   mailOptions.subject = req.body.name;
   mailOptions.text = req.body.message;
   transporter.sendMail(mailOptions, (error, info) => {
