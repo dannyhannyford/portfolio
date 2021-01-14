@@ -9,7 +9,7 @@ applications.push({
   title: 'Tensor Tango',
   description: 'Tensorflow.js application utilizing computer vision to track and label dance moves',
   link: 'https://github.com/dannyhannyford/tensorTango',
-  pic: 'https://portfoliodan.s3-us-west-2.amazonaws.com/tango.png',
+  pic: 'https://portfoliodan.s3-us-west-2.amazonaws.com/tangom4ngo.jpg',
 }, {
   title: 'Krak-O-Lantern',
   description: 'Legacy code with a backend rebuilt to withstand traffic spikes',
