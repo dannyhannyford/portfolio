@@ -16,11 +16,17 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 140,
+    'object-position': '0 5%',
   },
   paper: {
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+  },
+  box: {
+    overflow: 'hidden',
+    'text-overflow': 'ellipsis',
+    height: '48px',
   },
   actionArea: {
     '&:hover $focusHighlight': {
@@ -72,7 +78,7 @@ const Portfolio = () => {
                     title={app.title}
                   />
                   <Typography>
-                    <Box variant="body1" textAlign="center" color={theme.palette.secondary.main}>
+                    <Box variant="body1" textAlign="center" color={theme.palette.secondary.main} className={classes.box}>
                       {app.description}
                     </Box>
                   </Typography>
