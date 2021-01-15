@@ -50,24 +50,26 @@ h3 {
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  border-color:#faaa8f;
-  background-color:#faaa8f;
+  border-color:#ebae97;
+  background-color:#ebae97;
   border-width: 10px;
 }
+/* faaa8f */
 .about {
   padding-top: 2%;
   padding-bottom: 2%;
+  background-color: #fff5ee;
 }
 
 #portfolio {
-  background-color: #fff5ee;
+  background-color: #ecd9be;
   padding-top: 2%;
   padding-bottom: 3%;
 }
 
 #contact {
   padding-top: 2%;
-  background-color:#444444;
+  background-color:#484545;
 }
 
 #form {

@@ -14,17 +14,17 @@ const useStyles = makeStyles((theme) => ({
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#0097ac',
+      main: '#4591a1',
     },
     secondary: {
-      main: '#444444',
+      main: '#484545',
     },
     accent: {
       backgroundColor: '#f4dcb5',
-      color: '#444444',
+      color: '#484545',
     },
     send: {
-      backgroundColor: '#444444',
+      backgroundColor: '#484545',
       color: '#FFFFFF',
       borderColor: '#ffffff',
     },
