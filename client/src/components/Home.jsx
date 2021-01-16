@@ -2,8 +2,9 @@ import React from 'react';
 import { Container } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import '../style.css';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 import IconLabelButtons from './IconLabelButtons';
 
 const theme = createMuiTheme({
@@ -15,28 +16,40 @@ const theme = createMuiTheme({
   },
 });
 
-const Home = () => (
-  <Box height="100%">
+const useStyles = makeStyles(() => ({
+  paper: {
+    color: '#484545',
+    backgroundColor: '#ebae97',
+  },
+}));
+
+const Home = () => {
+  const classes = useStyles();
+
+  return (
     <div id="home" className="home">
-      <Container maxWidth="md">
-        <div className="homebox pad">
-          <div className="homecover">
-            <div className="hometxt">
-              <ThemeProvider theme={theme}>
-                <Typography gutterBottom>
-                  <Box>
-                    <h1>Danny</h1>
-                  </Box>
-                </Typography>
-              </ThemeProvider>
-              <h3>Full-Stack Software Engineer. I work with beeps and boops.</h3>
-            </div>
-          </div>
-        </div>
+      <Container maxWidth="sm">
+        <Paper
+          className={classes.paper}
+          color="#ebae97"
+        >
+          <ThemeProvider theme={theme}>
+            <Typography gutterBottom>
+              <Box>
+                <h1>Danny</h1>
+              </Box>
+            </Typography>
+            <Typography gutterBottom>
+              <Box>
+                <h3>Full-Stack Software Engineer. I work with beeps and boops.</h3>
+              </Box>
+            </Typography>
+          </ThemeProvider>
+        </Paper>
         <IconLabelButtons />
       </Container>
     </div>
-  </Box>
-);
+  );
+};
 
 export default Home;

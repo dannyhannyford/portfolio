@@ -14,9 +14,9 @@ h1 {
 }
 
 h3 {
-  margin: 0;
   text-align: center;
   justify-content: center;
+  padding-bottom: 1%;
 }
 .home {
   padding-top: 15%;
