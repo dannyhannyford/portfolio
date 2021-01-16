@@ -137,7 +137,7 @@ const Contact = () => {
           alignItems="center"
         >
           <Typography variant="h3" gutterBottom>
-            <Box fontWeight="fontWeightBold">
+            <Box color="white" fontWeight="fontWeightBold">
               Contact
             </Box>
           </Typography>

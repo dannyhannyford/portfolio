@@ -71,77 +71,74 @@ const theme = createMuiTheme({
   },
 });
 
-const Nav = (props) => {
-  return (
-    <>
-      <ThemeProvider theme={theme}>
-        <HideOnScroll {...props}>
-          <AppBar
-          color="secondary"
-          >
-            <Toolbar>
-              <ThemeProvider theme={theme2}>
-              <IconButton
-              edge="start"
-              color="secondary"
-              >  
-                <BrightnessHighIcon />
-              </IconButton>
-              </ThemeProvider>
-              <Typography variant="h6">
-                <Box color={theme.palette.title.color}>
-                  dannyhanny
-                </Box>
-              </Typography>
-              <Grid
-                container
-                direction="row"
-                justify="space-evenly"
-                alignItems="center"
+const Nav = (props) => (
+  <>
+    <ThemeProvider theme={theme}>
+      <HideOnScroll {...props}>
+        <AppBar
+        color="secondary"
+        >
+          <Toolbar>
+            <ThemeProvider theme={theme2}>
+            <IconButton
+            edge="start"
+            color="secondary"
+            >  
+              <BrightnessHighIcon />
+            </IconButton>
+            </ThemeProvider>
+            <Typography variant="h6">
+              <Box color={theme.palette.title.color}>
+                dannyhanny
+              </Box>
+            </Typography>
+            <Grid
+              container
+              direction="row"
+              justify="space-evenly"
+              alignItems="center"
+              >
+              <Router>
+                <Button
+                  component={Link}
+                  smooth to="#home"
+                  color="secondary"
                 >
-                <Router>
-                  <Button
-                    component={Link}
-                    smooth to="#home"
-                    color="secondary"
-                  >
-                    Home
-                  </Button>
-                
-                  <Button
-                  component={Link}
-                  color="secondary"
-                  smooth to="#about"
-                  >
-                    About
-                  </Button>
-                  <Button
-                  component={Link}
-                  color="secondary"
-                  smooth to="#portfolio"
-                  >
-                    Portfolio
-                  </Button>
-                  <Button
-                  component={Link}
-                  color="secondary"
-                  smooth to="#contact"
-                  >
-                    Contact
-                  </Button>
-                </Router>
-              </Grid>
-            </Toolbar>
-          </AppBar>
-        </HideOnScroll>
-        <ScrollTop {...props}>
-          <Fab color="secondary" size="small" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-        </ScrollTop>
-      </ThemeProvider>
-    </>
-  );
-};
+                  Home
+                </Button>
+                <Button
+                component={Link}
+                color="secondary"
+                smooth to="#about"
+                >
+                  About
+                </Button>
+                <Button
+                component={Link}
+                color="secondary"
+                smooth to="#portfolio"
+                >
+                  Portfolio
+                </Button>
+                <Button
+                component={Link}
+                color="secondary"
+                smooth to="#contact"
+                >
+                  Contact
+                </Button>
+              </Router>
+            </Grid>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
+      <ScrollTop {...props}>
+        <Fab color="secondary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
+    </ThemeProvider>
+  </>
+);
 
 export default Nav;
