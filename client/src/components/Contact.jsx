@@ -13,7 +13,7 @@ import {
   Snackbar,
   SnackbarContent,
 } from '@material-ui/core';
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import { theme } from './IconLabelButtons';
@@ -27,10 +27,47 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
+  label: {
+    background: '#484545',
+    paddingRight: theme.spacing(0.5),
+    '&.Mui-focused': {
+      color: '#ebae97',
+    },
+  },
 }));
+
+const useOutlineStyle = makeStyles({
+  root: {
+    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+      borderColor: '#ebae97',
+    },
+  },
+});
+
+const theme1 = createMuiTheme({
+  overrides: {
+    MuiOutlinedInput: {
+      root: {
+        '& $notchedOutline': {
+          borderColor: '#6b615f',
+        },
+        '&:hover:not($disabled):not($focused):not($error) $notchedOutline': {
+          borderColor: '#ebae97',
+          // Reset on touch devices, it doesn't add specificity
+          '@media (hover: none)': {
+            borderColor: '#ebae97',
+          },
+        },
+      },
+      focused: {},
+      notchedOutline: {},
+    },
+  },
+});
 
 const Contact = () => {
   const classes = useStyles();
+  const outlineStyle = useOutlineStyle();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -104,20 +141,34 @@ const Contact = () => {
           <form id="form" className={classes.root}>
             <Grid item>
               <FormControl size="medium" fullWidth variant="outlined">
-                <InputLabel htmlFor="Name">Name</InputLabel>
-                <OutlinedInput
-                  fullWidth
-                  id="Name"
-                  value={name}
-                  onChange={handleChange}
-                  label="Name"
-                />
+                <InputLabel
+                  className={classes.label}
+                  htmlFor="Name"
+                >
+                  Name
+                </InputLabel>
+                <MuiThemeProvider theme={theme1}>
+                  <OutlinedInput
+                    classes={outlineStyle}
+                    fullWidth
+                    id="Name"
+                    value={name}
+                    onChange={handleChange}
+                    label="Name"
+                  />
+                </MuiThemeProvider>
               </FormControl>
             </Grid>
             <Grid item>
               <FormControl fullWidth variant="outlined">
-                <InputLabel htmlFor="Email">Email</InputLabel>
+                <InputLabel
+                  className={classes.label}
+                  htmlFor="Email"
+                >
+                  Email
+                </InputLabel>
                 <OutlinedInput
+                  classes={outlineStyle}
                   fullWidth
                   id="Email"
                   value={email}
@@ -128,8 +179,14 @@ const Contact = () => {
             </Grid>
             <Grid item>
               <FormControl fullWidth variant="outlined">
-                <InputLabel htmlFor="Message">Message</InputLabel>
+                <InputLabel
+                  className={classes.label}
+                  htmlFor="Message"
+                >
+                  Message
+                </InputLabel>
                 <OutlinedInput
+                  classes={outlineStyle}
                   fullWidth
                   id="Message"
                   multiline
