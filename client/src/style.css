@@ -40,7 +40,7 @@ h3 {
 
 .hometxt {
   margin: 10px;
-  color: #444444;
+  color: #484545;
   text-align: center;
 }
 
@@ -50,30 +50,27 @@ h3 {
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  border-color:#faaa8f;
-  background-color:#faaa8f;
+  border-color:#ebae97;
+  background-color:#ebae97;
   border-width: 10px;
 }
+
 .about {
   padding-top: 2%;
   padding-bottom: 2%;
 }
 
 #portfolio {
-  background-color: #fff5ee;
+  background-color: #ecd9be;
   padding-top: 2%;
   padding-bottom: 3%;
 }
 
 #contact {
   padding-top: 2%;
-  background-color:#444444;
+  background-color:#484545;
 }
 
 #form {
   width: 80%;
 }
-/*
-#fff5ee 
-#faaa8f
- */

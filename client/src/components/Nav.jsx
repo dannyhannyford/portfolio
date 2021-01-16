@@ -63,10 +63,10 @@ const ScrollTop = (props) => {
 const theme = createMuiTheme({
   palette: {
     secondary: {
-      main: '#faaa8f',
+      main: '#ebae97',
     },
     title: {
-      color: '#444444',
+      color: '#484545',
     },
   },
 });
