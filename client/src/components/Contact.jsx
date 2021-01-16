@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
       color: '#ebae97',
     },
   },
+  textField: {
+    color: '#FFFFFF',
+  },
 }));
 
 const useOutlineStyle = makeStyles({
@@ -134,7 +137,7 @@ const Contact = () => {
           alignItems="center"
         >
           <Typography variant="h3" gutterBottom>
-            <Box fontWeight="fontWeightBold" color="white">
+            <Box fontWeight="fontWeightBold">
               Contact
             </Box>
           </Typography>
@@ -150,6 +153,7 @@ const Contact = () => {
                 <MuiThemeProvider theme={theme1}>
                   <OutlinedInput
                     classes={outlineStyle}
+                    className={classes.textField}
                     fullWidth
                     id="Name"
                     value={name}
@@ -169,6 +173,7 @@ const Contact = () => {
                 </InputLabel>
                 <OutlinedInput
                   classes={outlineStyle}
+                  className={classes.textField}
                   fullWidth
                   id="Email"
                   value={email}
@@ -187,6 +192,7 @@ const Contact = () => {
                 </InputLabel>
                 <OutlinedInput
                   classes={outlineStyle}
+                  className={classes.textField}
                   fullWidth
                   id="Message"
                   multiline
@@ -228,8 +234,8 @@ const Contact = () => {
         >
           <SnackbarContent
             style={{
-              backgroundColor: '#f4dcb5',
-              color: '#444444',
+              backgroundColor: '#fff5ee',
+              color: '#484545',
             }}
             message="Message sent successfully. Thanks!"
             action={action}
