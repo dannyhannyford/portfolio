@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createRef } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
@@ -16,7 +16,9 @@ import {
 import { makeStyles, ThemeProvider, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { theme } from './IconLabelButtons';
+import { captchaSiteKey } from '../../../config';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -71,6 +73,7 @@ const theme1 = createMuiTheme({
 const Contact = () => {
   const classes = useStyles();
   const outlineStyle = useOutlineStyle();
+  const recaptchaRef = createRef();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -96,12 +99,21 @@ const Contact = () => {
     setOpen(false);
   };
 
+  const onChange = (value) => {
+    console.log('captcha complete');
+    console.log('onchange value', value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const recaptchaValue = recaptchaRef.current.getValue();
+    recaptchaRef.current.execute();
+    console.log('recaptcha val', recaptchaValue);
     axios.post('/email', {
       name,
       email,
       message,
+      recaptchaValue,
     })
       .then(() => {
         setOpen(true);
@@ -144,6 +156,12 @@ const Contact = () => {
           <form id="form" className={classes.root}>
             <Grid item>
               <FormControl size="medium" fullWidth variant="outlined">
+                <ReCAPTCHA
+                  sitekey={captchaSiteKey}
+                  size="invisible"
+                  ref={recaptchaRef}
+                  onChange={onChange}
+                />
                 <InputLabel
                   className={classes.label}
                   htmlFor="Name"
