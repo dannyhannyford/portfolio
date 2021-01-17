@@ -141,6 +141,13 @@ const Contact = () => {
 
   return (
     <div id="contact">
+      <Container maxWidth="sm">
+        <Typography variant="h3" gutterBottom>
+          <Box color="white" fontWeight="fontWeightBold" textAlign="center">
+            Contact
+          </Box>
+        </Typography>
+      </Container>
       <Container maxWidth="md">
         <Grid
           container
@@ -148,11 +155,6 @@ const Contact = () => {
           justify="center"
           alignItems="center"
         >
-          <Typography variant="h3" gutterBottom>
-            <Box color="white" fontWeight="fontWeightBold">
-              Contact
-            </Box>
-          </Typography>
           <form id="form" className={classes.root}>
             <Grid item>
               <FormControl size="medium" fullWidth variant="outlined">

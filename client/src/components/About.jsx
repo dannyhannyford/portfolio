@@ -27,17 +27,16 @@ const About = () => {
       <Container maxWidth="md">
         <div className={classes.root}>
           <Grid
-            justify="center"
             alignItems="center"
             container
             spacing={3}
           >
-            <Grid item sm={2}>
+            <Grid justify="flex-start" sm={2}>
               <img alt="flamingo" src="https://portfoliodan.s3-us-west-2.amazonaws.com/flamingo.png" />
             </Grid>
-            <Grid item sm={7}>
+            <Grid item justify="center" sm={8}>
               <PinkTypography variant="h3" gutterBottom>
-                <Box fontWeight="fontWeightBold" textAlign="left">
+                <Box fontWeight="fontWeightBold" textAlign="center">
                   About
                 </Box>
               </PinkTypography>
