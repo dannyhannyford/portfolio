@@ -14,7 +14,6 @@ import { HashLink as Link } from 'react-router-hash-link';
 import Zoom from '@material-ui/core/Zoom';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Fab from '@material-ui/core/Fab';
-import { theme as theme2 } from './IconLabelButtons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +46,7 @@ const ScrollTop = (props) => {
     const anchor = (event.target.ownerDocument || document).querySelector('#home');
 
     if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'center'});
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
 
@@ -76,17 +75,15 @@ const Nav = (props) => (
     <ThemeProvider theme={theme}>
       <HideOnScroll {...props}>
         <AppBar
-        color="secondary"
+          color="secondary"
         >
           <Toolbar>
-            <ThemeProvider theme={theme2}>
             <IconButton
-            edge="start"
-            color="secondary"
-            >  
+              edge="start"
+              color="title"
+            >
               <BrightnessHighIcon />
             </IconButton>
-            </ThemeProvider>
             <Typography variant="h6">
               <Box color={theme.palette.title.color}>
                 dannyhanny
@@ -97,7 +94,7 @@ const Nav = (props) => (
               direction="row"
               justify="space-evenly"
               alignItems="center"
-              >
+            >
               <Router>
                 <Button
                   component={Link}
@@ -107,23 +104,23 @@ const Nav = (props) => (
                   Home
                 </Button>
                 <Button
-                component={Link}
-                color="secondary"
-                smooth to="#about"
+                  component={Link}
+                  color="secondary"
+                  smooth to="#about"
                 >
                   About
                 </Button>
                 <Button
-                component={Link}
-                color="secondary"
-                smooth to="#portfolio"
+                  component={Link}
+                  color="secondary"
+                  smooth to="#portfolio"
                 >
                   Portfolio
                 </Button>
                 <Button
-                component={Link}
-                color="secondary"
-                smooth to="#contact"
+                  component={Link}
+                  color="secondary"
+                  smooth to="#contact"
                 >
                   Contact
                 </Button>

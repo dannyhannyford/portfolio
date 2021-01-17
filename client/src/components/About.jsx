@@ -4,12 +4,13 @@ import { Container } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import '../style.css';
-import { theme } from './IconLabelButtons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+  },
+  box: {
+    color: '#484545',
   },
 }));
 
@@ -41,7 +42,7 @@ const About = () => {
                 </Box>
               </PinkTypography>
               <Typography variant="body1" gutterBottom>
-                <Box textAlign="left" color={theme.palette.secondary.main}>
+                <Box textAlign="left" className={classes.box}>
                   This past year I taught myself Python creating
                   a Discord Bot plugin for my friends.
                   I picked up Javascript to attend and complete
