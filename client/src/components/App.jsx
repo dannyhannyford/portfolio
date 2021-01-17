@@ -1,17 +1,18 @@
-import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import React, { lazy, Suspense } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Home from './Home';
-import About from './About';
 import Nav from './Nav';
-import Portfolio from './Portfolio';
-import Contact from './Contact';
 import '../style.css';
+
+const Home = lazy(() => import('./Home'));
+const CssBaseline = lazy(() => import('@material-ui/core/CssBaseline'));
+const About = lazy(() => import('./About'));
+const Portfolio = lazy(() => import('./Portfolio'));
+const Contact = lazy(() => import('./Contact'));
 
 const styles = () => ({
   '@global': {
     '#home': {
-      backgroundImage: 'url(https://portfoliodan.s3-us-west-2.amazonaws.com/oceanBeach3.webp)',
+      backgroundImage: 'url(https://portfoliodan.s3-us-west-2.amazonaws.com/oceanBeach4.webp)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center center',
       backgroundSize: 'cover',
@@ -28,12 +29,14 @@ const styles = () => ({
 
 const App = () => (
   <div>
-    <CssBaseline />
     <Nav />
-    <Home />
-    <About />
-    <Portfolio />
-    <Contact />
+    <Suspense fallback={<h1>loading Background, About, Portfolio, Contacts...</h1>}>
+      <Home />
+      <About />
+      <CssBaseline />
+      <Portfolio />
+      <Contact />
+    </Suspense>
   </div>
 );
 
