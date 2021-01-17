@@ -47,12 +47,14 @@ const Portfolio = () => {
 
   return (
     <div id="portfolio" className={classes.root}>
-      <Container maxWidth="lg">
+      <Container maxWidth="sm">
         <Typography variant="h3" gutterBottom>
           <Box fontWeight="fontWeightBold" textAlign="center" color={theme.palette.secondary.main}>
             Portfolio
           </Box>
         </Typography>
+      </Container>
+      <Container maxWidth="lg">
         <Grid container justify="center" spacing={1}>
           {applications.map((app) => (
             <Grid key={app.title} item xs={3}>
