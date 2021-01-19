@@ -18,7 +18,9 @@ app.post('/validate', (req, res) => {
     .then(({ data }) => {
       if(data.success) {
         res.sendStatus(200)
+        return;
       }
+      res.sendStatus(404);
     })
     .catch((err) => console.log(err))
 })
@@ -38,6 +40,7 @@ app.post('/email', (req, res) => {
     }
   });
   res.sendStatus(250);
+  return;
 });
 
 module.exports = app;
