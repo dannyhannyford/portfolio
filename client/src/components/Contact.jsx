@@ -101,15 +101,7 @@ const Contact = () => {
   };
 
   const onChange = (value) => {
-    console.log('captcha complete');
-    console.log('onchange value', value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    recaptchaRef.current.execute();
     const recaptchaValue = recaptchaRef.current.getValue();
-    console.log('recaptcha val', recaptchaValue);
     axios.post('/email', {
       name,
       email,
@@ -125,6 +117,11 @@ const Contact = () => {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    recaptchaRef.current.execute();
   };
 
   const action = (
@@ -228,8 +225,8 @@ const Contact = () => {
               >
                 <ReCAPTCHA
                   sitekey={captchaSiteKey}
-                  size="invisible"
                   ref={recaptchaRef}
+                  size="invisible"
                   onChange={onChange}
                   badge="inline"
                 />
