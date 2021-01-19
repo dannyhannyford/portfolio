@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   label: {
+    color: 'white',
     background: '#484545',
     paddingRight: theme.spacing(0.5),
     '&.Mui-focused': {
@@ -106,8 +107,8 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const recaptchaValue = recaptchaRef.current.getValue();
     recaptchaRef.current.execute();
+    const recaptchaValue = recaptchaRef.current.getValue();
     console.log('recaptcha val', recaptchaValue);
     axios.post('/email', {
       name,
@@ -158,12 +159,6 @@ const Contact = () => {
           <form id="form" className={classes.root}>
             <Grid item>
               <FormControl size="medium" fullWidth variant="outlined">
-                <ReCAPTCHA
-                  sitekey={captchaSiteKey}
-                  size="invisible"
-                  ref={recaptchaRef}
-                  onChange={onChange}
-                />
                 <InputLabel
                   className={classes.label}
                   htmlFor="Name"
@@ -225,9 +220,20 @@ const Contact = () => {
             </Grid>
             <Grid
               container
-              justify="flex-end"
+              justify="space-between"
               allignItems="center"
             >
+              <Grid
+                item
+              >
+                <ReCAPTCHA
+                  sitekey={captchaSiteKey}
+                  size="invisible"
+                  ref={recaptchaRef}
+                  onChange={onChange}
+                  badge="inline"
+                />
+              </Grid>
               <ThemeProvider theme={theme}>
                 <Button
                   onClick={(e) => handleSubmit(e)}
