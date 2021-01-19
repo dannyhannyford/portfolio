@@ -2,28 +2,26 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const axios = require('axios');
 
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 const { transporter, mailOptions } = require('./email');
-const { captchaBackKey } = require('../config.js');
-const axios = require('axios');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static(PUBLIC_DIR));
 
-const validate = async (token) => {
-  const secret = captchaBackKey;
+app.post('/validate', (req, res) => {
+  const secret = req.body.secret;
+  const token = req.body.token;
   axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`)
-    .then(({data}) => {
-      console.log(data, 'recaptcha node data');
+    .then(({ data }) => {
+      if(data.success) {
+        res.sendStatus(200)
+      }
     })
-    .catch((err) => {
-      console.log(err);
-    })
-  
-  return false;
-}
+    .catch((err) => console.log(err))
+})
 
 app.post('/email', (req, res) => {
   mailOptions.to = 'dannyhannyford@gmail.com';
@@ -31,11 +29,6 @@ app.post('/email', (req, res) => {
   mailOptions.replyTo = req.body.email;
   mailOptions.subject = req.body.name;
   mailOptions.text = req.body.message;
-  const secret = req.body.recaptchaValue;
-  console.log('mail options', mailOptions)
-  
-  let meme = validate(secret);
-  // console.log('validate result', meme);
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {

@@ -1,3 +1,4 @@
+import 'regenerator-runtime';
 import React, { useState, createRef } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -18,7 +19,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { theme } from './IconLabelButtons';
-import { captchaSiteKey } from '../../../config';
+import { captchaSiteKey, captchaBackKey } from '../../../config';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -100,13 +101,27 @@ const Contact = () => {
     setOpen(false);
   };
 
-  const onChange = (value) => {
+  async function Validate(token) {
+    const secret = captchaBackKey;
+    const response = await axios.post('/validate', { secret, token })
+      .then(() => true)
+      .catch((err) => {
+        console.log(err);
+      });
+    return response;
+  }
+
+  const onChange = async () => {
     const recaptchaValue = recaptchaRef.current.getValue();
+
+    const result = await Validate(recaptchaValue);
+    if (result === false) {
+      return;
+    }
     axios.post('/email', {
       name,
       email,
       message,
-      recaptchaValue,
     })
       .then(() => {
         setOpen(true);
