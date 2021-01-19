@@ -1,17 +1,20 @@
+require('dotenv').config();
 const nodemailer = require('nodemailer');
-const nodeAuth = require('../config');
 
 const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
   service: 'gmail',
   auth: {
-    user: nodeAuth.user,
-    pass: nodeAuth.pass,
+    user: process.env.USER_EMAIL,
+    pass: process.env.PASS_EMAIL,
   },
 });
 
 const mailOptions = {
-  from: 'users email',
-  to: nodeAuth.user,
+  from: 'meme@dream',
+  to: 'wow@bow',
   subject: 'name goes here',
   text: 'Dudes, we really need your money.',
 };
