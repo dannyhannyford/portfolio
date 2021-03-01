@@ -20,7 +20,7 @@ app.post('/validate', (req, res) => {
         res.sendStatus(200)
         return;
       }
-      res.sendStatus(404);
+      res.sendStatus(502);
     })
     .catch((err) => console.log(err))
 })
