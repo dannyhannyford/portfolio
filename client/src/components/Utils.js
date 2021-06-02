@@ -6,6 +6,11 @@ applications.push({
   link: 'https://github.com/souperhost-3000/service-dannyhannyford',
   pic: 'https://portfoliodan.s3-us-west-2.amazonaws.com/image34.png',
 }, {
+  title: 'EatDish',
+  description: 'Recipe sharing application, akin to Github',
+  link: 'https://github.com/EatDish/EatDish',
+  pic: 'https://portfoliodan.s3-us-west-2.amazonaws.com/EatDish.png',
+}, {
   title: 'Tensor Tango',
   description: 'Tensorflow.js app utilizing computer vision to track and label dance moves',
   link: 'https://github.com/dannyhannyford/tensorTango',

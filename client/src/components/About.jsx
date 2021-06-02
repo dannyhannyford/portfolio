@@ -42,13 +42,10 @@ const About = () => {
               </PinkTypography>
               <Typography variant="body1" gutterBottom>
                 <Box textAlign="left" className={classes.box}>
-                  This past year I taught myself Python creating
-                  a Discord Bot plugin for my friends.
-                  I picked up Javascript to attend and complete
-                  the Software Engineering bootcamp Hack Reactor.
-                  I'm currently working on an application to
-                  track and teach dance moves with Tensorflow.js called Tensor Tango.
-                  Looking for a team with good mentorship that will push me towards new horizons.
+                 I am currently enrolled
+                 in Vizio's Cloud Platform Engineer internship. I work with Amazon's Alexa API so users can control their Vizio TV's with voice.
+                 After my internship(June 21st - August 30th) I'm looking for a team with good mentorship 
+                 that will push me towards new horizons.
                 </Box>
               </Typography>
             </Grid>
